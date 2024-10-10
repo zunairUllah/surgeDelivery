@@ -1,0 +1,322 @@
+/*! CSS Used from: file:///C:/github/madinaStore/Olivine/assets/css/bootstrap.min.css */
+*,
+::after,
+::before {
+	 
+  margin: 0;
+}
+
+a {
+	color: var(--bs-link-color);
+	text-decoration: underline;
+}
+
+a:hover {
+	color: var(--bs-link-hover-color);
+}
+
+label {
+	display: inline-block;
+  font-weight: 700;
+}
+
+button {
+	border-radius: 0;
+}
+
+button:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+button,
+input {
+	margin: 0;
+	font-family: inherit;
+	line-height: inherit;
+}
+
+button {
+	text-transform: none;
+}
+
+[type=submit],
+
+
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+	cursor: pointer;
+}
+/*===================================================================
+[Table Of Content]
+
+    * Typography CSS
+    * Common CSS
+    * Main Navigation CSS
+    * Header CSS
+    * Home Slider CSS
+    * About CSS
+    * Causes CSS
+    * Donate CSS
+    * Team CSS
+    * Brand Logo CSS
+    * Form CSS
+    * Blog CSS
+    * Contact CSS
+    * Footer CSS
+
+=====================================================================*/
+/*
+-----------------------------------------------------------------------
+  Typography CSS
+-----------------------------------------------------------------------
+*/
+body {
+    box-sizing: border-box; 
+    color: #333333;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #333333;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  
+  a {
+    color: #816031;
+    text-decoration: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+  }
+  a:hover, a:active, a:focus {
+    box-shadow: none;
+    color: #4a371c;
+    outline: none;
+    text-decoration: none;
+  }
+  a img {
+    border: none;
+  }
+  
+  .btn:focus {
+    box-shadow: none;
+  }
+  
+  p {
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
+  :active,
+  :focus {
+    box-shadow: none;
+    outline: none !important;
+  }
+  
+  ::selection {
+    background: #816031;
+    color: #fff;
+    text-shadow: none;
+  }
+  
+  ::-moz-selection {
+    background: #816031;
+    /* Firefox */
+    color: #fff;
+    text-shadow: none;
+  }
+  
+  ::-webkit-selection {
+    background: #816031;
+    /* Safari */
+    color: #fff;
+    text-shadow: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  iframe {
+    border: none !important;
+  }
+  
+  textarea:focus, textarea:active, input:focus, input:active {
+    outline: none;
+  }
+  
+  ul {
+    padding: 0;
+  }
+  ul li {
+    list-style: none;
+    font-size: 1rem;    
+    font-weight: 700;
+  }
+  
+  pre,
+  ul,
+  ol,
+  dl,
+  dd,
+  blockquote,
+  address,
+  table,
+  fieldset {
+    margin-bottom: 1rem;
+  }
+  
+  table p {
+    margin-bottom: 0;
+  }
+
+/* CSS for Search component */
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: .5rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	resize: vertical;
+  }
+  
+
+  .layoutMap {
+    display: grid;
+    grid-template-rows: auto 1fr;  /* First row for the menu, second row for the map */
+    height: 100vh;                 /* Make the grid container take full height of the viewport */
+  
+  }
+  
+
+  #map {
+    height: 100%;  /* Ensure the map takes up all available height in the second grid row */
+  }
+  
+  .layoutMap .widget-menu-wrap {
+    text-align: center;
+    background-color: #D9D9D9;
+    border: 0.15rem solid #000;
+  }
+
+
+
+  .layout {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr; /* Adjust the rows to fit their content */
+    justify-items: center; /* Centers content horizontally */
+    align-items: center;   /* Centers content vertically */
+  }
+.layout .widget-menu-wrap {
+  text-align: center;
+}
+.widget-menu-wrap {
+  position: sticky;  /* Makes the element sticky */
+  top: 0;            /* Sticks to the top of the viewport */
+  z-index: 1000;     /* Ensures it stays above other elements when scrolling */
+  background-color: white; /* Optional: add background to avoid overlap issues */
+}
+
+.widget-menu-wrap .nav-menu li {
+  display: inline-block;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  margin-right: 2rem;
+  color: #333;
+  display: inline-block;
+  letter-spacing: 0;
+}
+
+.widget-menu-wrap .nav-menu li:hover {
+background-color: #000;
+  color: #fff;
+}
+
+.screen {
+  width: 95%;
+}
+
+
+.pro-remove {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  margin-left: 1.5rem;
+}
+.pro-remove:hover {
+  cursor: pointer;
+}
+
+.product-info {
+  margin-bottom: 0.8rem;
+}
+.results {
+  margin-top: .8rem;
+  border-radius: .5rem;
+  border: 1px solid #ccc;
+}
+
+.list {
+  margin: 0.5rem;
+}
+
+.go {
+  display: inline-block;
+  font-size: 1.5rem;    
+  font-weight: 700;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  color: #333;
+  display: inline-block;
+  letter-spacing: 0;
+
+}
+
+.go:hover {
+  background-color: #000;
+    color: #fff;
+  }
+
+  .photo {
+    width: 100%;
+    text-align: center;  
+  }
+  
+  .photo img {
+    width: 8rem;                     /* Prevent the image from overflowing horizontally */
+    object-fit: contain;                 /* Fit the image within the container while keeping its aspect ratio */
+  }
+  
+  .photocap {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
