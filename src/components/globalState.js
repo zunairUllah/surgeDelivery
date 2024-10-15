@@ -191,12 +191,15 @@ export const initializeMap = async () => {
 
 
 export const state = {
-  search: {
+  search: {   
 
     predictions: [],
     keywords: "",
     stops: [],
     api: () => {
+
+      let start = "";
+      let end = "";
       // Update fireKeywords to handle two parameters
       const fireKeywords = (inputType, val) => {
         console.log(`Input Type: ${inputType}, Value: ${val}`);
@@ -233,9 +236,7 @@ export const state = {
       };
 
       const addStop = async (input, id) => {
-        const stop = await getPlaceDetails(id);
-        let start = "";
-        let end = "";
+        const stop = await getPlaceDetails(id);       
         let stops = [];
       
         // Retrieve the current stops from local storage
@@ -260,14 +261,18 @@ export const state = {
         localStorage.setItem('stops', JSON.stringify(finalStops));
         Redirect("/")
       };
-      const goButton = async () => {       
-        let stops = []   
-        stops = stopsLocalstorage();    
-        const waypointsOrder = await route(transformToRoute(stops));
-        console.log(waypointsOrder);
-        const sortedStops = reorderMiddleElements(stops, waypointsOrder);
-        localStorage.setItem('stops', JSON.stringify(sortedStops));
-          Redirect("/marker")
+      const goButton = async () => { 
+        if (start && end) {
+          let stops = []   
+          stops = stopsLocalstorage();    
+          const waypointsOrder = await route(transformToRoute(stops));
+          const sortedStops = reorderMiddleElements(stops, waypointsOrder);
+          localStorage.setItem('stops', JSON.stringify(sortedStops));
+            Redirect("/marker")
+        } else {
+alert("please enter start and end fields !!")
+        }     
+      
       };
       return { fireKeywords, debounceKeywords, addStop, removeStop, goButton, Redirect };
     },
