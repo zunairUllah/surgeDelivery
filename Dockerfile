@@ -1,23 +1,26 @@
-# Use an official Node.js runtime as the base image
-FROM node:18-alpine
+# Use the official Node.js image as the base image
+FROM node:16
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json (if available)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
+# Install all dependencies (including devDependencies for building)
 RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
-# Build the Parcel project
+# Build the application using Parcel
 RUN npm run build
 
-# Expose the port that the app will run on
+# Expose the port the app runs on
 EXPOSE 8080
 
-# Start the Express server
-CMD ["node", "index.js"]
+# Create a simple Express server
+COPY server.js ./
+
+# Start the application using Node
+CMD ["node", "server.js"]
