@@ -1,4 +1,4 @@
-runtime: nodejs16  # or nodejs18 if you're using a newer version
+runtime: nodejs18  # or nodejs18 if you're using a newer version
 
 instance_class: F1  # Optional: specify the instance class
 
