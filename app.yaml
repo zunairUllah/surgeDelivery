@@ -1,0 +1,23 @@
+runtime: nodejs16  # or nodejs18 if you're using a newer version
+
+instance_class: F1  # Optional: specify the instance class
+
+env: standard  # Use the standard environment for App Engine
+
+# Specify the entry point for your application
+entrypoint: node server.js  # Start the Express server
+
+# Optional: Define automatic scaling settings
+automatic_scaling:
+  min_instances: 1  # Minimum number of instances to keep running
+  max_instances: 3  # Maximum number of instances
+
+# Define handlers to serve static files from the dist directory
+handlers:
+  - url: /.*
+    static_files: dist/index.html  # Serve index.html for the root URL
+    upload: dist/index.html
+
+  - url: /(.*)
+    static_files: dist/\1  # Serve other static files from the dist directory
+    upload: dist/(.*)
